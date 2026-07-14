@@ -1,0 +1,309 @@
+.daily-actions-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.tracker-subheading {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: left;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.effort-scores-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.effort-scores-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* circular gauge styling */
+.effort-gauge-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.effort-gauge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.gauge-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.04);
+}
+
+.gauge-fill {
+  fill: none;
+  stroke: #7B1FA2; /* Glowing purple matching mockup style */
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 6px rgba(123, 31, 162, 0.5));
+}
+
+.gauge-center-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-percent {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.gauge-label {
+  font-size: 9px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* Divider Line */
+.effort-card-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin-bottom: 16px;
+}
+
+/* Split metrics footer */
+.effort-split-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.split-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.split-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.split-label {
+  font-size: 9.5px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-align: center;
+}
+
+.vertical-stat-line {
+  height: 28px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Action button stack style */
+.action-buttons-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.stacked-action-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-align: left;
+}
+
+.stacked-action-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Default green gradient action button state */
+.stacked-action-btn.green-default {
+  background: linear-gradient(95deg, #2E7D32 0%, #1B5E20 100%);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+}
+
+.stacked-action-btn.green-default:hover {
+  background: linear-gradient(95deg, #388E3C 0%, #2E7D32 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+}
+
+/* Logged and locked red gradient action button state */
+.stacked-action-btn.logged-red {
+  background: linear-gradient(95deg, #C62828 0%, #B71C1C 100%);
+  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.25);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.btn-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: var(--transition-smooth);
+}
+
+.btn-text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.btn-action-icon {
+  color: white;
+  opacity: 0.9;
+}
+
+/* Inline Weight Logger Card (Shows inside the same page flow) */
+.inline-weight-card {
+  width: 100%;
+  background-color: #121625;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px 18px 18px 18px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin-top: 12px;
+  animation: inlineSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes inlineSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-inline-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  outline: none;
+}
+
+.close-inline-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.weight-modal-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-prompt-text {
+  color: var(--color-text-primary);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* White background weight input box */
+.mockup-weight-input-wrapper {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.mockup-weight-input {
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  height: 44px;
+  padding: 0 12px 0 16px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #000000; /* Dark text inside white background */
+  font-family: var(--font-sans);
+}
+
+.mockup-weight-input::placeholder {
+  color: #757575;
+  font-weight: 500;
+}
+
+/* Purple submit button matching mockup */
+.mockup-save-btn {
+  width: 100%;
+  height: 44px;
+  background-color: #7B1FA2; /* Purple color */
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 10px rgba(123, 31, 162, 0.25);
+  outline: none;
+}
+
+.mockup-save-btn:hover {
+  background-color: #9C27B0;
+  box-shadow: 0 6px 15px rgba(123, 31, 162, 0.35);
+  transform: translateY(-1px);
+}
+
+.mockup-save-btn:active {
+  transform: translateY(0);
+}

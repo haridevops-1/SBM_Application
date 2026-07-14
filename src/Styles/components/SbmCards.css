@@ -1,0 +1,140 @@
+.sbm-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: left;
+  letter-spacing: -0.3px;
+}
+
+.sbm-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.sbm-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 8px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  min-height: 110px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sbm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sbm-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.sbm-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.sbm-score-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.sbm-card-title {
+  font-size: 9.5px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Themes matching specific colors */
+.purple-theme {
+  background: rgba(123, 31, 162, 0.12);
+  border-color: rgba(123, 31, 162, 0.25);
+}
+.purple-theme:hover {
+  background: rgba(123, 31, 162, 0.2);
+  border-color: rgba(123, 31, 162, 0.5);
+}
+.purple-theme .sbm-icon {
+  color: #B085F5;
+}
+.purple-theme .sbm-icon-wrapper {
+  background: rgba(123, 31, 162, 0.2);
+}
+
+.blue-theme {
+  background: rgba(41, 182, 246, 0.12);
+  border-color: rgba(41, 182, 246, 0.25);
+}
+.blue-theme:hover {
+  background: rgba(41, 182, 246, 0.2);
+  border-color: rgba(41, 182, 246, 0.5);
+}
+.blue-theme .sbm-icon {
+  color: var(--color-blue-light);
+}
+.blue-theme .sbm-icon-wrapper {
+  background: rgba(41, 182, 246, 0.2);
+}
+
+.teal-theme {
+  background: rgba(76, 175, 80, 0.12);
+  border-color: rgba(76, 175, 80, 0.25);
+}
+.teal-theme:hover {
+  background: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.5);
+}
+.teal-theme .sbm-icon {
+  color: #4CAF50;
+}
+.teal-theme .sbm-icon-wrapper {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.gold-theme {
+  background: rgba(255, 152, 0, 0.12);
+  border-color: rgba(255, 152, 0, 0.25);
+}
+.gold-theme:hover {
+  background: rgba(255, 152, 0, 0.2);
+  border-color: rgba(255, 152, 0, 0.5);
+}
+.gold-theme .sbm-icon {
+  color: var(--color-orange);
+}
+.gold-theme .sbm-icon-wrapper {
+  background: rgba(255, 152, 0, 0.2);
+}
+
+@media (max-width: 380px) {
+  .sbm-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}

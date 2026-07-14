@@ -1,0 +1,25 @@
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.date-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.calendar-icon {
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+}
+
+.date-text {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}

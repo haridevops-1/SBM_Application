@@ -1,0 +1,33 @@
+.quote-banner-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--purple-gradient);
+  border: 1px solid rgba(123, 31, 162, 0.25);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.star-icon-container {
+  background: rgba(123, 31, 162, 0.3);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(123, 31, 162, 0.4);
+}
+
+.star-icon-svg {
+  filter: drop-shadow(0 0 4px #B085F5);
+}
+
+.quote-text {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #ECEFF1;
+  font-weight: 500;
+  text-align: left;
+}

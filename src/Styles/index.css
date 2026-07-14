@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette from mockup */
+  --bg-dark: #0A0D18;
+  --bg-card: rgba(22, 27, 43, 0.7);
+  --bg-card-hover: rgba(28, 34, 54, 0.9);
+  --border-color: rgba(255, 255, 255, 0.08);
+  
+  --color-slate-dark: #2C3E50;
+  --color-slate-med: #34495E;
+  --color-green: #4CAF50;
+  --color-purple: #7B1FA2;
+  --color-orange: #FF9800;
+  --color-blue-light: #29B6F6;
+  --color-text-primary: #ECEFF1;
+  --color-text-secondary: #90A4AE;
+  --color-text-muted: #546E7A;
+  
+  /* Additional glass/gradient definitions */
+  --purple-gradient: linear-gradient(135deg, rgba(123, 31, 162, 0.25) 0%, rgba(123, 31, 162, 0.05) 100%);
+  --blue-gradient: linear-gradient(135deg, rgba(41, 182, 246, 0.25) 0%, rgba(41, 182, 246, 0.05) 100%);
+  --green-gradient: linear-gradient(135deg, rgba(76, 175, 80, 0.25) 0%, rgba(76, 175, 80, 0.05) 100%);
+  --orange-gradient: linear-gradient(135deg, rgba(255, 152, 0, 0.25) 0%, rgba(255, 152, 0, 0.05) 100%);
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0f121e; /* outer background */
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-med);
+}
+
+/* Root App container simulating a premium mobile device view or clean centered layout */
+#root {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 90px; /* space for fixed bottom nav */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Global Header Profile Avatar Initial Circle Badge */
+.header-profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-blue-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  outline: none;
+}
+
+.header-profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(123, 31, 162, 0.3);
+}
+
+.header-profile-avatar:active {
+  transform: scale(0.96);
+}
